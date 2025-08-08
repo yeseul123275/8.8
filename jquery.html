@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+    crossorigin="anonymous"></script>
     <script>
-        src= "https://code.jquery.com/jquery-3.7.1.min.js"
-        
+        $(document).ready(function(){
+            const naverdb =[ 
+                {
+                title : "네이버",
+                href : "http://www.naver.com",
+                class : "text-dark naver",
+                target : "_blank"
+                },
+                {
+                title : "다음",
+                href : "http://www.daum.net",
+                class : "text-dark daum",
+                target : "_blank"
+                },
+                {
+                title : "구글",
+                href : "http://www.google.com",
+                class : "text-dark daum",
+                target : "_blank"
+                }
+            ]
+
+            $("#gnb li a").each(function(){
+                $(this).html(naverdb[$(this).parent().index()].title)
+            })
+            
+        })
     </script>
 </head>
 <body>
-    
+    <ul id="gnb">
+        <li class="gnbli1"><a href="">1</a></li>
+        <li class="gnbli2"><a href="">2</a></li>
+        <li class="gnbli3"><a href="">3</a></li>
+        <li class="gnbli4"><a href="">4</a></li>
+    </ul>    
 </body>
 </html>
